@@ -3,6 +3,6 @@ body {
   padding:0;
 }
 
-.header, .utama, .extra1, .extra2, .footer {
-  margin: 0
+body div * {
+  margin:0;
 }
