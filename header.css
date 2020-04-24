@@ -1,0 +1,21 @@
+/* ************************
+* awali segala selector dengan  
+* .header [spasi] class yang 
+* dipilih didalammnya
+*
+*  
+* 
+*
+*************************** */
+
+
+/* misal */
+.header .test {
+    color: red;
+    background-color:yellow;
+}
+.header .test h4 {
+    font-size:25pt;
+    color:white;
+}
+/* end of misal */

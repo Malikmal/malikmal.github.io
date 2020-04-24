@@ -1,0 +1,21 @@
+/* ************************
+* awali segala selector dengan  
+* .footer [spasi] class yang 
+* dipilih didalammnya
+*
+*  
+* 
+*
+*************************** */
+
+
+/* misal */
+.footer .test {
+    color: red;
+    background-color:blue;
+}
+.footer .test h4 {
+    font-size:25pt;
+    color:white;
+}
+/* end of misal */

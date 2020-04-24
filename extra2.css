@@ -1,0 +1,21 @@
+/* ************************
+* awali segala selector dengan  
+* .extra2 [spasi] class yang 
+* dipilih didalammnya
+*
+*  
+* 
+*
+*************************** */
+
+
+/* misal */
+.extra2 .test {
+    color: blue;
+    background-color:red;
+}
+.extra2 .test h4 {
+    font-size:25pt;
+    color:white;
+}
+/* end of misal */
