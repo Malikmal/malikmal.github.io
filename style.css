@@ -2,3 +2,7 @@ body {
   margin:0;
   padding:0;
 }
+
+.header, .utama, .extra1, .extra2, .footer {
+  margin: 0
+}
