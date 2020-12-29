@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v1
       - run: npm install
       - run: npm run build
-      - run : touch out/.nojekyll
+      # - run : touch out/.nojekyll
         env:
             CI: true
             WORDPRESS_API_URL : ${{ secrets.WORDPRESS_API_URL }}
@@ -34,5 +34,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: out/server/pages # The folder the action should deploy.
+          FOLDER: out # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
