@@ -29,7 +29,7 @@ jobs:
             NODE_ENV : "production"
 
       - name: change structure the file
-        run: touch out/server/pages/.nojekyll && cp -rf out/static out/server/pages/_next/static
+        run: touch out/server/pages/.nojekyll && mkdir out/server/pages/_next && cp -rf out/static out/server/pages/_next/static
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
