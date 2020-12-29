@@ -5,6 +5,6 @@ module.exports = {
     // options: {
     //     dist: 'dist'
     //   }
-    distDir: 'out',
-    // assetPrefix: '', //isProd ? 'https://cdn.statically.io/gh/Malikmal/malikmal.github.io/gh-pages/' : '',
+    // distDir: 'out',
+    // assetPrefix: '/', //isProd ? 'https://cdn.statically.io/gh/Malikmal/malikmal.github.io/gh-pages/' : '',
   }
