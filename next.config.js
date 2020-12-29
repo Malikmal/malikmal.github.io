@@ -3,8 +3,8 @@
 module.exports = {
     /* config options here */
     // options: {
-    //     dist: '.next'
+    //     dist: 'dist'
     //   }
     distDir: 'out',
-    assetPrefix: '', //isProd ? 'https://cdn.statically.io/gh/Malikmal/malikmal.github.io/gh-pages/' : '',
+    // assetPrefix: '', //isProd ? 'https://cdn.statically.io/gh/Malikmal/malikmal.github.io/gh-pages/' : '',
   }
