@@ -1,5 +1,5 @@
 {
-  "name": "pmii-1011-blog",
+  "name": "my-blog",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
