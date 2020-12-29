@@ -25,6 +25,7 @@ jobs:
       - run: npm run build
         env:
             CI: true
+            WORDPRESS_API_URL : ${{ secrets.WORDPRESS_API_URL }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
