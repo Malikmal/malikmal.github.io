@@ -3,22 +3,29 @@
 import axios from 'axios'
 import userSWR from 'swr'
 
-// const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+// const DISPATCH_GITHUB_TOKEN = process.env.DISPATCH_GITHUB_TOKEN;
 // const fetcher = (...args) => fetch(...args).then(res => res.json())
 const url = "https://api.github.com/repos/malikmal/malikmal.github.io/actions/workflows/dispatch.yml/dispatches";
 
 const fetcher = url => axios.post(url, {"ref":"master"}, {
     headers: {
-        Authorization: `token ${process.env.GITHUB_TOKEN}`,
-        Accept : "application/vnd.github.v3+json"
+        "Authorization": `Bearer ${process.env.DISPATCH_GITHUB_TOKEN}`,
+        "Accept" : "application/vnd.github.v3+json",
+        "Content-Type" : "application/json",
+        "Content-Length": "1024",
+        "Host" :  "malikmal.github.io",
+        "User-Agent" : "ChromeRuntime",
+        "Accept-Encoding" : "gzip, deflate, br",
+        "Connection" : "keep-alive",
+
     }
 }).then(res => res.data)
 
 export default function dispatch(){
-    console.log(process.env.GITHUB_TOKEN);
+    // console.log(process.env.DISPATCH_GITHUB_TOKEN);
     const {data, error} = userSWR(url, fetcher)
 
-    if (error) return <div>failed to load</div>
+    if (error) return <div>failed to load {JSON.stringify(error)}</div>
     if (!data) return <div>loading...</div>
     // render data
     return <div>hello !</div>
@@ -32,7 +39,7 @@ export default function dispatch(){
     // const url = "https://api.github.com/repos/malikmal/malikmal.github.io/actions/workflows/dispatch.yml/dispatches";
     // const res = Axios.post(url, {"ref":"master"},{
     //     headers: {
-    //         Authorization: `token ${process.env.GITHUB_TOKEN}`,
+    //         Authorization: `token ${process.env.DISPATCH_GITHUB_TOKEN}`,
     //         Accept : "application/vnd.github.v3+json"
     //     }
     // })   
@@ -45,10 +52,10 @@ export default function dispatch(){
 
     // }
 
-    // if (process.env.process.env.GITHUB_TOKEN) {
+    // if (process.env.process.env.DISPATCH_GITHUB_TOKEN) {
     //   headers[
     //     'Authorization'
-    //   ] = `Bearer ${process.env.process.env.GITHUB_TOKEN}`
+    //   ] = `Bearer ${process.env.process.env.DISPATCH_GITHUB_TOKEN}`
     // }
   
     // const res = await fetch(url, {
