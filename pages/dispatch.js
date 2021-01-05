@@ -15,7 +15,7 @@ const fetcher = url => axios.post(url, {"ref":"master"}, {
 }).then(res => res.data)
 
 export default function dispatch(){
-    
+    console.log(process.env.GITHUB_TOKEN);
     const {data, error} = userSWR(url, fetcher)
 
     if (error) return <div>failed to load</div>
