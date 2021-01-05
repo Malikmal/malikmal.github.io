@@ -7,4 +7,7 @@ module.exports = {
     //   }
     // distDir: 'out',
     // assetPrefix: '/', //isProd ? 'https://cdn.statically.io/gh/Malikmal/malikmal.github.io/gh-pages/' : '',
+    env : {
+      GITHUB_TOKEN : process.env.GITHUB_TOKEN,
+    }
   }
