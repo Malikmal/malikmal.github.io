@@ -18,6 +18,10 @@
 
 
 name: Ping
+env:
+  REPO_OWNER: malikmal
+  REPO_NAME: malikmal.github.io
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
 on:
   workflow_dispatch
 
