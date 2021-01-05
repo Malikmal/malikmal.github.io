@@ -26,6 +26,7 @@ jobs:
         env:
             CI: true
             WORDPRESS_API_URL : ${{ secrets.WORDPRESS_API_URL }}
+            GITHUB_TOKEN : ${{ secrets.TOKEN }}
             NODE_ENV : "production"
 
       # - name: change structure the file
