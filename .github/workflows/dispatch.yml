@@ -1,17 +1,30 @@
+# name: Ping
+# env:
+#   REPO_OWNER: malikmal
+#   REPO_NAME: malikmal.github.io
+#   GITHUB_TOKEN: ${{ secrets.TOKEN }}
+# on:
+#   repository_dispatch:
+#     types: [run-ping]
+# jobs:
+#   ping:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Install packages
+#         run: npm ci
+#       - name: Run Ping
+#         run: npm run ping
+
+
 name: Ping
-env:
-  REPO_OWNER: malikmal
-  REPO_NAME: malikmal.github.io
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
 on:
-  repository_dispatch:
-    types: [run-ping]
+  workflow_dispatch
+
 jobs:
-  ping:
+  say_hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install packages
-        run: npm ci
-      - name: Run Ping
-        run: npm run ping
+    - run: |
+        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "- in ${{ github.event.inputs.home }}!"
