@@ -9,7 +9,7 @@ const url = "https://api.github.com/repos/malikmal/malikmal.github.io/actions/wo
 
 const fetcher = url => axios.post(url, {"ref":"master"}, {
     headers: {
-        "Authorization": `Bearer ${process.env.DISPATCH_GITHUB_TOKEN}`,
+        "Authorization": `token ${process.env.DISPATCH_GITHUB_TOKEN}`,
         "Accept" : "application/vnd.github.v3+json",
         "Content-Type" : "application/json",
         "Content-Length": "1024",
@@ -25,7 +25,7 @@ export default function dispatch(){
     // console.log(process.env.DISPATCH_GITHUB_TOKEN);
     const {data, error} = userSWR(url, fetcher)
 
-    if (error) return <div>failed to load {JSON.stringify(error)}</div>
+    if (error) return <div>failed to load </div>
     if (!data) return <div>loading...</div>
     // render data
     return <div>hello !</div>
