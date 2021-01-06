@@ -8,18 +8,25 @@ import userSWR from 'swr'
 const url = "https://api.github.com/repos/malikmal/malikmal.github.io/actions/workflows/dispatch.yml/dispatches";
 
 const fetcher = url => axios.post(url, {"ref":"master"}, {
-    headers: {
-        "Authorization": `token ${process.env.DISPATCH_GITHUB_TOKEN}`,
-        "Accept" : "application/vnd.github.v3+json",
-        "Content-Type" : "application/json",
-        "Content-Length": "1024",
-        "Host" :  "malikmal.github.io",
-        "User-Agent" : "ChromeRuntime",
-        "Accept-Encoding" : "gzip, deflate, br",
-        "Connection" : "keep-alive",
-
+    headers : {
+        Authorization : `token ${process.env.DISPATCH_GITHUB_TOKEN}`,
+        Accept : "application/vnd.github.v3+json",
+        // "Content-Type" : "application/json",
+        // "Content-Length" : "1024",
+        // Host : "malikmal98.github.io",
+        // "User-Agent" : "Malikmal",
+        // "Accept-Encoding" : "gzip, deflate, br",
+        // Connection : "keep-alive",
+        // "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Credentials" : "true",
+        // "Access-Control-Allow-Methods" : "GET,HEAD,OPTIONS,POST,PUT",
+        // "Access-Control-Allow-Headers" : "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
     }
 }).then(res => res.data)
+.catch(err => {
+    console.log(err);
+})
+
 
 export default function dispatch(){
     // console.log(process.env.DISPATCH_GITHUB_TOKEN);
