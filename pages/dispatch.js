@@ -10,7 +10,7 @@ const fetcher = (url) => fetch(url, {
     method: 'POST',
     headers: {
          'Content-Type': 'application/json',
-         'Authorization' : `token ${process.env.DISPATCH_GITHUB_TOKEN}`,
+         'Authorization' : `token fd895ef3226d30f8ff18f7e27b2d839da246283a`,
          'Accept' : "application/vnd.github.v3+json",
     },
     body: JSON.stringify({ 'ref': 'master' })
