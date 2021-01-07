@@ -17,7 +17,7 @@
 #         run: npm run ping
 
 
-name: Ping
+name: dispatch
 env:
   REPO_OWNER: malikmal
   REPO_NAME: malikmal.github.io
