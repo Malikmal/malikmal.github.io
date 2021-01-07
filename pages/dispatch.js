@@ -10,7 +10,6 @@ const url = "https://api.github.com/repos/Malikmal/malikmal.github.io/dispatches
 const fetcher = url => axios.post(
     url, 
     {
-        "ref":"master",
         "event_type": "run-ping",
             client_payload: {
                 command: "ping"

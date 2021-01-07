@@ -20,24 +20,27 @@ async function run(command) {
         GITHUB_TOKEN: token,
     } = process.env;
 
-    const isAllInOne = workflowType === "allinone";
+    // const isAllInOne = workflowType === "allinone";
 
-    console.log(`Received ${command || "No"} command`);
-    switch(command) {
-        case "ping":
-            payload.event_type = `run-pong${isAllInOne ? '-allinone' : ''}`;
-            payload.client_payload.command = "pong";
-            break;
-        case "pong":
-            payload.event_type = `run-done${isAllInOne ? '-allinone' : ''}`;
-            payload.client_payload.command = "done";
-            break;
-        case "done":
-            console.log('I GUESS WE ARE DONE!!! :-D');
-            return;
-        default:
-            throw new Error('Command not supported');
-    }
+    // console.log(`Received ${command || "No"} command`);
+    // switch(command) {
+    //     case "ping":
+    //         payload.event_type = `run-pong${isAllInOne ? '-allinone' : ''}`;
+    //         payload.client_payload.command = "pong";
+    //         break;
+    //     case "pong":
+    //         payload.event_type = `run-done${isAllInOne ? '-allinone' : ''}`;
+    //         payload.client_payload.command = "done";
+    //         break;
+    //     case "done":
+    //         console.log('I GUESS WE ARE DONE!!! :-D');
+    //         return;
+    //     default:
+    //         throw new Error('Command not supported');
+    // }
+
+    payload.event_type = `run-ping`;
+    payload.client_payload.command = "ping";
 
     if(!owner || !repo || !token) {
         throw new Error('Owner and repo required');
