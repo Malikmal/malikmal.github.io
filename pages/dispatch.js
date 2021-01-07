@@ -4,12 +4,21 @@ import userSWR from 'swr'
 
 // const DISPATCH_GITHUB_TOKEN = process.env.DISPATCH_GITHUB_TOKEN;
 // const fetcher = (...args) => fetch(...args).then(res => res.json())
-const url = "https://api.github.com/repos/malikmal/malikmal.github.io/actions/workflows/dispatch.yml/dispatches";
+// const url = "https://api.github.com/repos/malikmal/malikmal.github.io/actions/workflows/dispatch.yml/dispatches";
+const url = "https://api.github.com/repos/Malikmal/malikmal.github.io/dispatches"
 
-
-const fetcher = url => axios.post(url, {"ref":"master"}, {
+const fetcher = url => axios.post(
+    url, 
+    {
+        "ref":"master",
+        "event_type": "run-ping",
+            client_payload: {
+                command: "ping"
+            }
+    }, 
+    {
     headers : {
-        Authorization : `token ${process.env.DISPATCH_GITHUB_TOKEN}`,
+        Authorization : `token ${process.env.DISPATCH_GITHUB_TOKEN}`, // Bearer/token 
         Accept : "application/vnd.github.v3+json",
         "Content-Type" : "application/json",
     }
@@ -21,7 +30,7 @@ const fetcher = url => axios.post(url, {"ref":"master"}, {
 
 export default function dispatch(){
     // console.log(process.env.DISPATCH_GITHUB_TOKEN);
-    const {data, error} = userSWR(url, fetcher)
+    const {data, error} = userSWR(url, fetcher, {revalidateOnFocus:false})
 
     if (error) return <div>failed to load </div>
     if (!data) return <div>loading...</div>
