@@ -18,7 +18,7 @@ const fetcher = url => axios.post(
     }, 
     {
     headers : {
-        Authorization : `Bearer ${process.env.DISPATCH_GITHUB_TOKEN}`, // Bearer/token 
+        Authorization : `token ${process.env.DISPATCH_GITHUB_TOKEN}`, // Bearer/token 
         Accept : "application/vnd.github.v3+json",
         "Content-Type" : "application/json",
     }
