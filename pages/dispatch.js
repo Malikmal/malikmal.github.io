@@ -19,7 +19,12 @@ const fetcher = url => axios.post(
     headers : {
         Authorization : `token ${process.env.DISPATCH_GITHUB_TOKEN}`, // Bearer/token 
         Accept : "application/vnd.github.v3+json",
-        "Content-Type" : "application/json",
+
+        "accept-language": "en-US,en;q=0.9,id;q=0.8",
+        "content-type": "application/json",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site"
     }
 }).then(res => res.data)
 .catch(err => {
