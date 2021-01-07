@@ -1,6 +1,7 @@
 {
   "name": "my-blog",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -25,5 +26,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/malikmal/malikmal.github.io.git"
-  },
+  }
 }
